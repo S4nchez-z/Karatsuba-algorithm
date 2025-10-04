@@ -1,0 +1,14 @@
+#include <math.h>
+#include "kar.h"
+
+LARGE_INTEGER kar(LARGE_INTEGER x, LARGE_INTEGER y) {
+    
+    LARGE_INTEGER result;
+    result.QuadPart = 0;
+    {
+        result.QuadPart=((unsigned long long)(x.LeftPart*y.LeftPart)<<32)+
+((unsigned long long)((x.LeftPart+x.RightPart)*(y.LeftPart+y.RightPart)-x.RightPart*y.RightPart-x.LeftPart*y.LeftPart)<<16)
+ + x.RightPart*y.RightPart;
+    }
+    return result;
+}
