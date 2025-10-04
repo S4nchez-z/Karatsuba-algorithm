@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include "kar.c"
+
+int main(void) {
+    LARGE_INTEGER x;
+    LARGE_INTEGER y, res;
+    
+    printf("Введите первое число: ");
+    scanf("%lld", &x.QuadPart);
+    printf("Введите второе число: ");
+    scanf("%lld", &y.QuadPart);
+    res = kar(x,y);
+    printf("Результат: %lld\n", res.QuadPart);
+    return 0;
+}
